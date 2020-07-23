@@ -70,8 +70,8 @@ router.post("/prueba",async (ctx,next)=>{
   //const books = ["Speaking javascript", "Fluent Python", "Pro Python", "The Go programming language"];
   console.log("respuesta a form ");
   ctx.status = HttpStatus.OK;
-  ctx.body =ctx.request.body.nombre;
   client.query("INSERT INTO COMENTARIOS(nombre,hotel,comentario,correo)values('"+ctx.request.body.nombre+"','"+ctx.request.body.hotel+"','"+ctx.request.body.comentarios+"','"+ctx.request.body.correo+"')");
+  ctx.redirect('https://integraalphalobo.herokuapp.com/obtener');
   //await next();
 });
 
